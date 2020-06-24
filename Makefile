@@ -6,7 +6,7 @@
 #    By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/05 18:28:50 by nclabaux          #+#    #+#              #
-#    Updated: 2020/06/22 12:12:33 by nclabaux         ###   ########.fr        #
+#    Updated: 2020/06/24 18:16:52 by nclabaux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,12 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 
-LIBFLAGS = -L./minilibx-linux -lm -lmlx -lXext -lX11 -L./libft -lft
+LINUXFLAGS = -L./minilibx-linux -lm -lmlx -lXext -lX11 -L./libft -lft
+
+MACOSFLAGS = -L./minilibx_mms_20200219 -lmlx -framework AppKt -lz -L./libft -lft
 
 $(NAME): $(OBJS) libraries
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) main.c $(LIBFLAGS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) main.c $(LINUXFLAGS)
 
 all: $(NAME)
 
@@ -60,12 +62,14 @@ fclean: clean
 
 re: fclean all
 
-mactest:
-	gcc tester.c -lmlx -framework OpenGL -framework AppKit 
+mactest: $(OBJS)
+	make -C libft/
+	make -C minilibx_mms_20200219/
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) main.c $(MACOSFLAGS)
 
 linuxtest:
-	make -C libft/ 
-	clang tester.c f_main.c $(SRCS) $(LIBFLAGS) 
+	make -C libft/
+	clang tester.c f_main.c $(SRCS) $(LIBFLAGS)
 
 libraries:
 	make -C minilibx-linux/
