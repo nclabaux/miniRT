@@ -6,15 +6,15 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 17:05:07 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:39:40 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 11:36:43 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../mini_rt.h"
 
-void	ft_scene_verif(t_scene *as)
+void	ft_scene_verif(t_scene *as, int argc)
 {
-	ft_res_verif(as);
+	ft_res_verif(as, argc);
 	ft_al_verif(as);
 	ft_cam_verif(as);
 	ft_light_verif(as);
@@ -30,25 +30,28 @@ void	ft_vector_verif(t_scene *as, t_td *v)
 	*v = ft_unit_v(*v);
 }
 
-void	ft_res_verif(t_scene *as)
+void	ft_res_verif(t_scene *as, int argc)
 {
 	int	x;
 	int	y;
 
 	if (as->res.x < 1 || as->res.y < 1)
 		ft_errors(as, 1006, "");
-	mlx_get_screen_size(as->mlx, &x, &y);
-	if (as->res.x > x)
+	if (argc == 2)
 	{
-		as->res.x = x;
-		ft_printf("\033[01;33mHorizontal resolution changed to %d", x);
-		ft_printf(" to fit current monitor\n");
-	}
-	if (as->res.y > y)
-	{
-		as->res.y = y;
-		ft_printf("\033[01;33mVertical resolution changed to %d", y);
-		ft_printf(" to fit current display\n");
+		mlx_get_screen_size(as->mlx, &x, &y);
+		if (as->res.x > x)
+		{
+			as->res.x = x;
+			ft_printf("\033[01;33mHorizontal resolution changed to %d", x);
+			ft_printf(" to fit current monitor\n");
+		}
+		if (as->res.y > y)
+		{
+			as->res.y = y;
+			ft_printf("\033[01;33mVertical resolution changed to %d", y);
+			ft_printf(" to fit current display\n");
+		}
 	}
 }
 

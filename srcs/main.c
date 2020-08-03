@@ -6,7 +6,7 @@
 /*   By: nclabaux <nclabaux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:00:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 11:19:01 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 11:35:07 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int			main(int argc, char **argv)
 	ft_printf("\033[01;34m\nReading file...\n");
 	ft_read_file(argv[1], &scene);
 	scene.mlx = mlx_init();
-	ft_scene_verif(&scene);
+	ft_scene_verif(&scene, argc);
 	ft_printf("\033[01;32mFile read and compliant!\n");
 	ft_printf("\033[22;37m\nRendering images... Please wait\n");
 	if (scene.cam_nbr > 1)

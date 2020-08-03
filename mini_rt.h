@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:28:59 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 11:37:09 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -375,9 +375,9 @@ t_td			ft_multi_td(t_td v, double n);
 /*
 **	verification.c
 */
-void			ft_scene_verif(t_scene *as);
+void			ft_scene_verif(t_scene *as, int argc);
 void			ft_vector_verif(t_scene *as, t_td *v);
-void			ft_res_verif(t_scene *as);
+void			ft_res_verif(t_scene *as, int argc);
 void			ft_al_verif(t_scene *as);
 
 /*
