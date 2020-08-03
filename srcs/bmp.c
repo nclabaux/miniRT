@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:38:44 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:46:20 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 17:41:18 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	ft_bmp_header(int fd, t_scene *ascene)
 	hd.reserved = 0;
 	hd.dib_size = 40;
 	hd.dib_x = ascene->res.x;
-	hd.dib_y = ascene->res.y;
+	hd.dib_y = -ascene->res.y;
 	hd.dib_color_planes = 1;
 	hd.dib_bpp = 32;
 	hd.dib_compress = 0;

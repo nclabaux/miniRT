@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:56:07 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:39:14 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 16:17:34 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,22 @@ char	*ft_cut_filename(char *filename)
 		res[j++] = filename[i++];
 	res[j] = 0;
 	return (res);
+}
+
+int		ft_check_extension(char *filename, char *ext)
+{
+	int	i;
+	int	last_point;
+
+	i = 0;
+	last_point = 0;
+	while (filename[i])
+	{
+		if (filename[i] == '.')
+			last_point = i;
+		i++;
+	}
+	if (!last_point)
+		return (1);
+	return (ft_strncmp(filename + last_point + 1, ext, sizeof(ext)));
 }

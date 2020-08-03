@@ -6,7 +6,7 @@
 /*   By: nclabaux <nclabaux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:00:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 11:35:07 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 16:33:48 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,7 @@ int			main(int argc, char **argv)
 
 	ft_init_scene(&scene);
 	ft_printf("\033[01;37m\nHello and welcome in this mini Ray Tracer!\n");
-	if (argc < 2)
-		ft_errors(&scene, 1000, "");
-	if (argc > 3)
-		ft_errors(&scene, 1025, "");
-	if (argc == 3 && (ft_strncmp(argv[2], "-save", 5)))
-		ft_errors(&scene, 1001, argv[2]);
+	ft_arguments_check(&scene, argc, argv);
 	ft_printf("\033[01;34m\nReading file...\n");
 	ft_read_file(argv[1], &scene);
 	scene.mlx = mlx_init();
@@ -39,6 +34,19 @@ int			main(int argc, char **argv)
 	ft_save_images_to_bmp(&scene, argv[1]);
 	ft_kill(&scene);
 	return (0);
+}
+
+void		ft_arguments_check(t_scene *as, int argc, char **argv)
+{
+	if (argc < 2)
+		ft_errors(as, 1000, "");
+	if (argc > 3)
+		ft_errors(as, 1025, "");
+	if (argc == 3 && ft_strncmp(argv[2], "-save", 5)
+		&& ft_strncmp(argv[2], "--save", 6))
+		ft_errors(as, 1001, argv[2]);
+	if (ft_check_extension(argv[1], "rt"))
+		ft_errors(as, 1026, "");
 }
 
 void		ft_init_scene(t_scene *ascene)

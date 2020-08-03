@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 11:37:09 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 16:32:05 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MINI_RT_H
 
 # include <X11/Xlib.h>
-# include <mlx.h>
+# include "minilibx-linux/mlx.h"
 # include <math.h>
 # include <fcntl.h>
 # include <unistd.h>
@@ -330,6 +330,7 @@ int				ft_disp_curr_img(void *p[3]);
 **	main.c
 */
 int				main(int argc, char **argv);
+void			ft_arguments_check(t_scene *as, int argc, char **argv);
 void			ft_init_scene(t_scene *as);
 void			ft_put_images_to_window(t_scene *as);
 void			ft_save_images_to_bmp(t_scene *as, char *rt_file);
@@ -354,6 +355,7 @@ void			ft_alloc_tr(t_triangle tr, t_scene *as);
 **	utils.c
 */
 char			*ft_cut_filename(char *filename);
+int				ft_check_extension(char *filename, char *ext);
 
 /*
 **	vectorial_calculus.c

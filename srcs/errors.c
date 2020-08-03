@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 18:22:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:37:50 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 16:21:46 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ void	ft_errors2(t_scene *as, int i, char *s)
 		ft_prt_err(as, s, i, 22);
 	if (i == 1025)
 		ft_prt_err(as, "Too many arguments\n./miniRT <file.rt> [-save]", i, 0);
+	if (i == 1026)
+		ft_prt_err(as, "Invalid filetype\n./miniRT <file.rt> [-save]", i, 0);
 	(void)s;
 }
