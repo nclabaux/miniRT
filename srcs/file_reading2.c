@@ -6,11 +6,11 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 16:40:09 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:38:04 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:07:32 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mini_rt.h"
+#include "../includes/mini_rt.h"
 
 void	ft_sp_rd(char **s, t_scene *as)
 {

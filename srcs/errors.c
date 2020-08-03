@@ -6,11 +6,11 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 18:22:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 16:21:46 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:07:23 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mini_rt.h"
+#include "../includes/mini_rt.h"
 
 void	ft_prt_err(t_scene *as, char *s, int i, int x)
 {

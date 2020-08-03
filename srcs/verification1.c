@@ -6,11 +6,11 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 17:44:36 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:39:34 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:08:33 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mini_rt.h"
+#include "../includes/mini_rt.h"
 
 void	ft_cam_verif(t_scene *as)
 {

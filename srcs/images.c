@@ -6,11 +6,11 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/03 14:11:37 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 17:38:23 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:07:42 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mini_rt.h"
+#include "../includes/mini_rt.h"
 
 void		ft_gen_img(t_scene *as)
 {

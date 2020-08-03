@@ -6,11 +6,11 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 11:19:48 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/02 18:41:20 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:07:46 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mini_rt.h"
+#include "../includes/mini_rt.h"
 
 t_intersec	ft_pl_inter(t_ray ray, t_plane pl)
 {

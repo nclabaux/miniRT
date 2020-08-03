@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 16:32:05 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:11:38 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MINI_RT_H
 
 # include <X11/Xlib.h>
-# include "minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include <math.h>
 # include <fcntl.h>
 # include <unistd.h>
@@ -24,9 +24,9 @@
 # include <stdio.h>
 # include <string.h>
 # include <errno.h>
-# include "libft/libft/libft.h"
-# include "libft/ft_printf/ft_printf.h"
-# include "libft/gnl/get_next_line.h"
+# include "../libft/libft/libft.h"
+# include "../libft/ft_printf/ft_printf.h"
+# include "../libft/gnl/get_next_line.h"
 
 typedef struct	s_td
 {

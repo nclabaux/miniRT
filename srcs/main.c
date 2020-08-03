@@ -6,11 +6,11 @@
 /*   By: nclabaux <nclabaux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:00:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 16:33:48 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/03 19:08:06 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mini_rt.h"
+#include "../includes/mini_rt.h"
 
 int			main(int argc, char **argv)
 {
