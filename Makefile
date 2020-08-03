@@ -6,48 +6,54 @@
 #    By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/05 18:28:50 by nclabaux          #+#    #+#              #
-#    Updated: 2020/06/24 18:16:52 by nclabaux         ###   ########.fr        #
+#    Updated: 2020/08/02 19:36:21 by nclabaux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
 
-SRCS =	calculus.c\
-	colors.c\
-	distances.c\
-	errors.c\
-	file_reading.c\
-	file_reading1.c\
-	file_reading2.c\
-	images.c\
-	light.c\
-	intersection.c\
-	intersection1.c\
-	list_handling.c\
-	set_data.c\
-	vectorial_calculus.c\
-	vectorial_calculus1.c\
-	verification.c\
-	verification1.c
-
-A = 	\
-    	main.c\
-	loop.c
+SRCS =	srcs/bmp.c\
+	srcs/calculus.c\
+	srcs/clear.c\
+	srcs/colors.c\
+	srcs/distances.c\
+	srcs/errors.c\
+	srcs/file_reading.c\
+	srcs/file_reading1.c\
+	srcs/file_reading2.c\
+	srcs/file_reading3.c\
+	srcs/images.c\
+	srcs/light.c\
+	srcs/intersection.c\
+	srcs/intersection_cy.c\
+	srcs/list_handling.c\
+	srcs/loop.c\
+	srcs/main.c\
+	srcs/ray.c\
+	srcs/set_data.c\
+	srcs/utils.c\
+	srcs/vectorial_calculus.c\
+	srcs/vectorial_calculus1.c\
+	srcs/verification.c\
+	srcs/verification1.c
 
 OBJS = $(SRCS:.c=.o)
 
+SAVE_DIR = saves/
+
 CC = gcc 
 
-RM = rm -f
+RM = rm -rf
 
-CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
-LINUXFLAGS = -L./minilibx-linux -lm -lmlx -lXext -lX11 -L./libft -lft
+LIBFLAGS = -L./minilibx-linux -lm -lmlx -lXext -lX11 -L./libft -lft
 
-MACOSFLAGS = -L./minilibx_mms_20200219 -lmlx -framework AppKt -lz -L./libft -lft
-
-$(NAME): $(OBJS) libraries
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) main.c $(LINUXFLAGS)
+$(NAME): $(OBJS)
+	make -C minilibx-linux/
+	make -C libft/
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFLAGS)
+	mkdir -p $(SAVE_DIR)
 
 all: $(NAME)
 
@@ -58,23 +64,8 @@ clean:
 
 fclean: clean
 	make -C libft/ fclean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(SAVE_DIR)
 
 re: fclean all
 
-mactest: $(OBJS)
-	make -C libft/
-	make -C minilibx_mms_20200219/
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) main.c $(MACOSFLAGS)
-
-linuxtest:
-	make -C libft/
-	clang tester.c f_main.c $(SRCS) $(LIBFLAGS)
-
-libraries:
-	make -C minilibx-linux/
-	make -C libft/
-
 .PHONY: all clean fclean re
-
-#.SILENT: all clean fclean re $(NAME) $(OBJS) make

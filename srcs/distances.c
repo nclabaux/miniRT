@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_handling.c                                    :+:      :+:    :+:   */
+/*   distances.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/07 15:34:32 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/05/12 17:37:20 by nclabaux         ###   ########.fr       */
+/*   Created: 2020/04/10 18:19:39 by nclabaux          #+#    #+#             */
+/*   Updated: 2020/08/02 17:37:44 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mini_rt.h"
+#include "../mini_rt.h"
 
-void	ft_add_cam(t_scene *ascene, t_camera *new_cam)
+double	ft_2p_dist(t_td a, t_td b)
 {
-	new_cam->next = ascene->cam_list;
-	ascene->cam_list = new_cam;
+	return (hypot(hypot(a.x - b.x, a.y - b.y), a.z - b.z));
 }
 
-void	ft_add_light(t_scene *ascene, t_light *new_light)
+double	ft_p_line_dist(t_td p, t_td l_p, t_td l_v)
 {
-	new_light->next = ascene->light_list;
-	ascene->light_list = new_light;
-}
-
-void	ft_add_object(t_scene *ascene, t_obj_link *new_ol)
-{
-	new_ol->next = ascene->object_list;
-	ascene->object_list = new_ol;
+	return (ft_norm(ft_cross(ft_2p_to_v(p, l_p), l_v)) / ft_norm(l_v));
 }

@@ -6,38 +6,30 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:01:45 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/06/22 12:02:40 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/02 17:39:28 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mini_rt.h"
+#include "../mini_rt.h"
 
-t_vector	ft_3p_to_v(t_point a, t_point b, t_point c)
+t_td	ft_3p_to_v(t_td a, t_td b, t_td c)
 {
-	t_vector	result;
-	double		x;
-	double		y;
-	double		z;
-	double		max;
+	t_td		res;
 
-	x = (b.y - a.y) * (c.z - a.z) - (b.z - a.z) * (c.y - a.y);
-	y = (b.z - a.z) * (c.x - a.x) - (b.x - a.x) * (c.z - a.z);
-	z = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
-	max = ft_max_double(ft_max_double(x, y), z);
-	result.x = x / max;
-	result.y = y / max;
-	result.z = z / max;
-	return (result);
+	res.x = (b.y - a.y) * (c.z - a.z) - (b.z - a.z) * (c.y - a.y);
+	res.y = (b.z - a.z) * (c.x - a.x) - (b.x - a.x) * (c.z - a.z);
+	res.z = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+	return (ft_unit_v(res));
 }
 
-double		ft_scalar_prod(t_vector a, t_vector b)
+double	ft_dot(t_td a, t_td b)
 {
 	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }
 
-t_vector	ft_cross_prod(t_vector a, t_vector b)
+t_td	ft_cross(t_td a, t_td b)
 {
-	t_vector	result;
+	t_td	result;
 
 	result.x = (a.y * b.z) - (a.z * b.y);
 	result.y = (a.z * b.x) - (a.x * b.z);
@@ -45,20 +37,17 @@ t_vector	ft_cross_prod(t_vector a, t_vector b)
 	return (result);
 }
 
-double		ft_norm(t_vector v)
+double	ft_norm(t_td v)
 {
 	return (hypot(hypot(v.x, v.y), v.z));
 }
 
-t_vector	ft_2p_to_v(t_point a, t_point b)
+t_td	ft_2p_to_v(t_td a, t_td b)
 {
-	t_vector	result;
+	t_td	result;
 
 	result.x = b.x - a.x;
-//	printf("%lf - %lf = %lf\n", b.x, a.x, result.x);
 	result.y = b.y - a.y;
-//	printf("%lf - %lf = %lf\n", b.y, a.y, result.y);
 	result.z = b.z - a.z;
-//	printf("%lf - %lf = %lf\n", b.z, a.z, result.z);
 	return (result);
 }
