@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculus.c                                         :+:      :+:    :+:   */
+/*   calculus_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 16:09:22 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:06:50 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:58:01 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mini_rt.h"
+#include "../includes/mini_rt_bonus.h"
 
 int		ft_solve_quadra(double a, double b, double c, double root[2])
 {

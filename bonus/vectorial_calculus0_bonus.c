@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vectorial_calculus0.c                              :+:      :+:    :+:   */
+/*   vectorial_calculus0_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 16:01:45 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:15:25 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:59:14 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mini_rt.h"
+#include "../includes/mini_rt_bonus.h"
 
 t_td	ft_3p_to_v(t_td a, t_td b, t_td c)
 {

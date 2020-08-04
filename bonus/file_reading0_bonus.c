@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   file_reading0.c                                    :+:      :+:    :+:   */
+/*   file_reading0_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 19:04:29 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:15:21 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:58:43 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mini_rt.h"
+#include "../includes/mini_rt_bonus.h"
 
 void	ft_read_file(char *file, t_scene *as)
 {

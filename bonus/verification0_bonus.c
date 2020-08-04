@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   verification0.c                                    :+:      :+:    :+:   */
+/*   verification0_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 17:05:07 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:15:28 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:59:19 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mini_rt.h"
+#include "../includes/mini_rt_bonus.h"
 
 void	ft_scene_verif(t_scene *as, int argc)
 {

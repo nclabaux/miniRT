@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   intersection_cy.c                                  :+:      :+:    :+:   */
+/*   intersection_cy_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/22 17:09:25 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:07:50 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:58:57 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mini_rt.h"
+#include "../includes/mini_rt_bonus.h"
 
 t_intersec	ft_cy_inter(t_ray ray, t_cylinder cy)
 {

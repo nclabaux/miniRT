@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bmp.c                                              :+:      :+:    :+:   */
+/*   bmp_bonus.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/09 14:38:44 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:06:43 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/04 13:57:57 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/mini_rt.h"
+#include "../includes/mini_rt_bonus.h"
 
 void	ft_save_img(t_img_link *il, t_scene *ascene, char *rt_file)
 {
