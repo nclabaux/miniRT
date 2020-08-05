@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:16:03 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/05 16:18:13 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,14 @@ typedef struct	s_cylinder
 	t_color		color;
 }				t_cylinder;
 
+typedef struct	s_cube
+{
+	t_td		p;
+	t_td		v;
+	double		size;
+	t_color		color;
+}				t_cube;
+
 typedef	union	u_object
 {
 	t_sphere	sp;
@@ -144,6 +152,12 @@ typedef struct	s_img_link
 	struct s_img_link	*next;
 }				t_img_link;
 
+typedef struct	s_filter
+{
+	int		type;
+	t_color		color;
+}				t_filter;
+
 typedef struct	s_scene
 {
 	t_resolution	res;
@@ -154,6 +168,7 @@ typedef struct	s_scene
 	t_obj_link		*object_list;
 	t_img_link		*img_list;
 	void			*mlx;
+	t_filter		filter;
 }				t_scene;
 
 typedef struct	s_ray
@@ -245,7 +260,7 @@ void			ft_errors1(t_scene *as, int i, char *s);
 void			ft_errors2(t_scene *as, int i, char *s);
 
 /*
-**	file_reading.c
+**	file_reading0.c
 */
 void			ft_read_file(char *file, t_scene *as);
 void			ft_translate_line(char **line, t_scene *as);
@@ -276,7 +291,13 @@ void			ft_tr_rd(char **line, t_scene *as);
 */
 void			ft_cy_rd(char **line, t_scene *as);
 void			ft_cy_rd2(char **s, t_scene *as, t_obj_link *new_ol, int i);
+void			ft_cu_rd(char **s, t_scene *as);
+void			ft_filter_rd(char **s, t_scene *as);
 
+/*
+**	filter.c
+*/
+t_color			ft_filter_colors(t_color c, t_filter f);
 /*
 **	images.c
 */
@@ -296,7 +317,7 @@ t_intersec		ft_sp_inter(t_ray ray, t_sphere sp);
 t_intersec		ft_sp_inter2(t_ray ray, double r[2]);
 
 /*
-**	intersection1.c
+**	intersection_cy.c
 */
 t_intersec		ft_cy_inter(t_ray ray, t_cylinder cy);
 t_intersec		ft_cy_disc(t_ray ray, t_plane disc, double r);
@@ -307,7 +328,7 @@ double			ft_get_roots(t_ray ray, t_cylinder cy);
 **	light.c
 */
 t_color			ft_get_light(t_intersec i, t_scene scene);
-t_color			ft_get_light2(t_color res, t_light *light, t_intersec i,
+t_color			ft_get_light2(t_light *light, t_intersec i,
 					double lambert);
 
 /*
@@ -343,7 +364,7 @@ t_td			ft_get_ray_v2(double q, t_td v);
 t_intersec		ft_shot_ray(t_ray ray, t_scene scene);
 
 /*
-**	set_data.c
+**	set_data0.c
 */
 void			ft_set_cam_data(t_camera *cam);
 void			ft_set_tr_data(t_triangle *tr);
@@ -352,13 +373,18 @@ void			ft_create_4tr_sq(t_square *sq, t_scene *as);
 void			ft_alloc_tr(t_triangle tr, t_scene *as);
 
 /*
+**	set_data_1.c
+*/
+void			ft_set_cu(t_scene *as, t_cube cu);
+
+/*
 **	utils.c
 */
 char			*ft_cut_filename(char *filename);
 int				ft_check_extension(char *filename, char *ext);
 
 /*
-**	vectorial_calculus.c
+**	vectorial_calculus0.c
 */
 t_td			ft_3p_to_v(t_td a, t_td b, t_td c);
 double			ft_dot(t_td a, t_td b);
@@ -375,7 +401,7 @@ t_td			ft_inverse(t_td v);
 t_td			ft_multi_td(t_td v, double n);
 
 /*
-**	verification.c
+**	verification0.c
 */
 void			ft_scene_verif(t_scene *as, int argc);
 void			ft_vector_verif(t_scene *as, t_td *v);

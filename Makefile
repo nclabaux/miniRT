@@ -6,7 +6,7 @@
 #    By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/05 18:28:50 by nclabaux          #+#    #+#              #
-#    Updated: 2020/08/03 19:13:38 by nclabaux         ###   ########.fr        #
+#    Updated: 2020/08/05 16:09:44 by nclabaux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS_BONUS =	bonus/bmp_bonus.c\
 	bonus/file_reading1_bonus.c\
 	bonus/file_reading2_bonus.c\
 	bonus/file_reading3_bonus.c\
+	bonus/filter_bonus.c\
 	bonus/images_bonus.c\
 	bonus/light_bonus.c\
 	bonus/intersection_bonus.c\
@@ -55,7 +56,8 @@ SRCS_BONUS =	bonus/bmp_bonus.c\
 	bonus/loop_bonus.c\
 	bonus/main_bonus.c\
 	bonus/ray_bonus.c\
-	bonus/set_data_bonus.c\
+	bonus/set_data0_bonus.c\
+	bonus/set_data1_bonus.c\
 	bonus/utils_bonus.c\
 	bonus/vectorial_calculus0_bonus.c\
 	bonus/vectorial_calculus1_bonus.c\
@@ -64,7 +66,7 @@ SRCS_BONUS =	bonus/bmp_bonus.c\
 
 OBJS = $(SRCS:.c=.o)
 
-OBJS_BONUS = $(SRCS_BONUS:.C=.O)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 SAVE_DIR = saves/
 
