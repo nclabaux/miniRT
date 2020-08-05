@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 15:05:42 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 16:25:33 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:19:59 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ t_color	ft_get_light(t_intersec i, t_scene scene)
 				res = ft_add_colors(res, ft_get_light2(light, i, lambert));
 			light = light->next;
 		}
+	}
+	else if (scene.sky)
+	{
+		if (fmod(random(), pow(10, 4 * (1 - scene.sky) + 2)) < 1)
+			res = (t_color) {255, 255, 255};
 	}
 	res = ft_filter_colors(res, scene.filter);
 	return (res);

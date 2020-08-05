@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 15:16:50 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 16:54:34 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:16:33 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,4 +126,18 @@ void	ft_filter_rd(char **s, t_scene *as)
 	}
 	else
 		ft_errors(as, 1029, "");
+}
+
+void	ft_skybox_rd(char **s, t_scene *as)
+{
+	int	i;
+
+	if (as->sky)
+		ft_errors(as, 1030, "");
+	i = 2;
+	while (ft_isspace((*s)[i]))
+		i++;
+	if (!ft_isdigit((*s)[i]))
+		ft_errors(as, 1031, "");
+	as->sky = ft_atod(*s + i);
 }

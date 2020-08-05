@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 18:22:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 15:06:32 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:17:29 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,14 @@ void	ft_errors2(t_scene *as, int i, char *s)
 		ft_prt_err(as, "Multiple color filter given", i, 0);
 	if (i == 1029)
 		ft_prt_err(as, "Bad color filter given", i, 0);
+	ft_errors3(as, i, s);
+}
+
+void	ft_errors3(t_scene *as, int i, char *s)
+{
+	if (i == 1030)
+		ft_prt_err(as, "Multiple skybox setting given", i, 0);
+	if (i == 1031)
+		ft_prt_err(as, "Bad skybox setting given", i, 0);
 	(void)s;
 }

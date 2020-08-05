@@ -6,7 +6,7 @@
 /*   By: nclabaux <nclabaux@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:00:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 15:58:33 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:05:27 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		ft_init_scene(t_scene *ascene)
 	ascene->mlx = NULL;
 	ascene->filter.type = 0;
 	ascene->filter.color = (t_color) {255, 255, 255};
+	ascene->sky = 0;
 }
 
 void		ft_put_images_to_window(t_scene *as)

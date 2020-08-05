@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 16:18:13 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/05 18:16:52 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,7 @@ typedef struct	s_scene
 	t_img_link		*img_list;
 	void			*mlx;
 	t_filter		filter;
+	double			sky;
 }				t_scene;
 
 typedef struct	s_ray
@@ -258,6 +259,7 @@ void			ft_ptr_err(t_scene *as, char *s, int i, int x);
 void			ft_errors(t_scene *as, int i, char *s);
 void			ft_errors1(t_scene *as, int i, char *s);
 void			ft_errors2(t_scene *as, int i, char *s);
+void			ft_errors3(t_scene *as, int i, char *s);
 
 /*
 **	file_reading0.c
@@ -293,6 +295,7 @@ void			ft_cy_rd(char **line, t_scene *as);
 void			ft_cy_rd2(char **s, t_scene *as, t_obj_link *new_ol, int i);
 void			ft_cu_rd(char **s, t_scene *as);
 void			ft_filter_rd(char **s, t_scene *as);
+void			ft_skybox_rd(char **s, t_scene *as);
 
 /*
 **	filter.c
