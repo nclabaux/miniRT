@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 15:16:50 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 18:16:33 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:48:54 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,37 +61,6 @@ void	ft_cy_rd2(char **s, t_scene *as, t_obj_link *new_ol, int i)
 	ft_add_object(as, new_ol);
 }
 
-void	ft_cu_rd(char **s, t_scene *as)
-{
-	int	i;
-	t_cube	cu;
-
-	i = 2;
-	while (ft_isspace((*s)[i]))
-		i++;
-	if (!(ft_isdigit((*s)[i]) || (*s)[i] == '-'))
-		ft_errors(as, 1027, "");
-	i += ft_read_td(as, *s + i, &(cu.p));
-	while (ft_isspace((*s)[i]))
-		i++;
-	if (!(ft_isdigit((*s)[i]) || (*s)[i] == '-'))
-		ft_errors(as, 1027, "");
-	i += ft_read_td(as, *s + i, &(cu.v));
-	while (ft_isspace((*s)[i]))
-		i++;
-	if (!(ft_isdigit((*s)[i]) || (*s)[i] == '-'))
-		ft_errors(as, 1027, "");
-	cu.size = ft_atod(*s + i);
-	while (ft_isdigit((*s)[i]) || (*s)[i] == '.')
-		i++;
-	while (ft_isspace((*s)[i]))
-		i++;
-	if (!(ft_isdigit((*s)[i])))
-		ft_errors(as, 1027, "");
-	ft_read_color(as, *s + i, &(cu.color));
-	ft_set_cu(as, cu);
-}
-
 void	ft_filter_rd(char **s, t_scene *as)
 {
 	int	i;
@@ -104,9 +73,15 @@ void	ft_filter_rd(char **s, t_scene *as)
 		i++;
 	if (ft_isdigit((*s)[i]))
 		ft_read_color(as, *s + i, &(as->filter.color));
-	else if ((*s)[i] == 'c')
+	else
+		ft_mono_filter(s, as, i);
+}
+
+void	ft_mono_filter(char **s, t_scene *as, int i)
+{
+	as->filter.type = 1;
+	if ((*s)[i] == 'c')
 	{
-		as->filter.type = 1;
 		i++;
 		while (ft_isspace((*s)[i]))
 			i++;
@@ -115,15 +90,9 @@ void	ft_filter_rd(char **s, t_scene *as)
 		ft_read_color(as, *s + i, &(as->filter.color));
 	}
 	else if ((*s)[i] == 's')
-	{
-		as->filter.type = 1;
 		as->filter.color = (t_color) {63, 34, 4};
-	}
 	else if ((*s)[i] == 'g')
-	{
-		as->filter.type = 1;
 		as->filter.color = (t_color) {0, 0, 0};
-	}
 	else
 		ft_errors(as, 1029, "");
 }

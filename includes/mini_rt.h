@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:11:38 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:54:55 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,7 +245,7 @@ void			ft_errors1(t_scene *as, int i, char *s);
 void			ft_errors2(t_scene *as, int i, char *s);
 
 /*
-**	file_reading.c
+**	file_reading0.c
 */
 void			ft_read_file(char *file, t_scene *as);
 void			ft_translate_line(char **line, t_scene *as);
@@ -296,7 +296,7 @@ t_intersec		ft_sp_inter(t_ray ray, t_sphere sp);
 t_intersec		ft_sp_inter2(t_ray ray, double r[2]);
 
 /*
-**	intersection1.c
+**	intersection_cy.c
 */
 t_intersec		ft_cy_inter(t_ray ray, t_cylinder cy);
 t_intersec		ft_cy_disc(t_ray ray, t_plane disc, double r);
@@ -358,7 +358,7 @@ char			*ft_cut_filename(char *filename);
 int				ft_check_extension(char *filename, char *ext);
 
 /*
-**	vectorial_calculus.c
+**	vectorial_calculus0.c
 */
 t_td			ft_3p_to_v(t_td a, t_td b, t_td c);
 double			ft_dot(t_td a, t_td b);
@@ -375,7 +375,7 @@ t_td			ft_inverse(t_td v);
 t_td			ft_multi_td(t_td v, double n);
 
 /*
-**	verification.c
+**	verification0.c
 */
 void			ft_scene_verif(t_scene *as, int argc);
 void			ft_vector_verif(t_scene *as, t_td *v);

@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 17:05:07 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/04 13:59:19 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:23:14 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ void	ft_res_verif(t_scene *as, int argc)
 
 void	ft_al_verif(t_scene *as)
 {
-	if (as->al.intensity < 0 || as->al.intensity > 1)
+	if (as->al.i < 0 || as->al.i > 1)
 		ft_errors(as, 1007, "");
-	if (as->al.intensity <= 0.1)
+	if (as->al.i <= 0.1)
 	{
 		ft_printf("\033[01;33m");
-		if (as->al.intensity == 0)
+		if (as->al.i == 0)
 			ft_printf("No ambient light");
 		else
 			ft_printf("Ambient light is faint");

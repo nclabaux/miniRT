@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 18:22:33 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/03 19:07:23 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:57:47 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,51 +33,51 @@ void	ft_errors(t_scene *as, int i, char *s)
 	if (i == 1002)
 		ft_prt_err(as, "Unable to read from file", i, 0);
 	if (i == 1003)
-		ft_prt_err(as, "Multiple resolution setting", i, 22);
+		ft_prt_err(as, "Multiple resolution setting", i, 0);
 	if (i == 1004)
-		ft_prt_err(as, "Multiple ambient light setting", i, 22);
+		ft_prt_err(as, "Multiple ambient light setting", i, 0);
 	if (i == 1005)
 		ft_prt_err(as, s, i, 22);
 	if (i == 1006)
-		ft_prt_err(as, "Bad resolution setting given", i, 22);
+		ft_prt_err(as, "Bad resolution setting given", i, 0);
 	if (i == 1007)
-		ft_prt_err(as, "Bad ambient light setting given", i, 22);
+		ft_prt_err(as, "Bad ambient light setting given", i, 0);
 	if (i == 1008)
-		ft_prt_err(as, "Bad color given", i, 22);
+		ft_prt_err(as, "Bad color given", i, 0);
 	if (i == 1009)
-		ft_prt_err(as, "Bad coordinates given", i, 22);
+		ft_prt_err(as, "Bad coordinates given", i, 0);
 	ft_errors1(as, i, s);
 }
 
 void	ft_errors1(t_scene *as, int i, char *s)
 {
 	if (i == 1010)
-		ft_prt_err(as, "Bad orientation vector given", i, 22);
+		ft_prt_err(as, "Bad orientation vector given", i, 0);
 	if (i == 1011)
 		ft_prt_err(as, "Error during memory allocation", i, 12);
 	if (i == 1012)
-		ft_prt_err(as, "Bad camera setting given", i, 22);
+		ft_prt_err(as, "Bad camera setting given", i, 0);
 	if (i == 1013)
-		ft_prt_err(as, "Bad light setting given", i, 22);
+		ft_prt_err(as, "Bad light setting given", i, 0);
 	if (i == 1014)
-		ft_prt_err(as, "Bad plane setting given", i, 22);
+		ft_prt_err(as, "Bad plane setting given", i, 0);
 	if (i == 1015)
-		ft_prt_err(as, "Bad sphere setting given", i, 22);
+		ft_prt_err(as, "Bad sphere setting given", i, 0);
 	if (i == 1016)
-		ft_prt_err(as, "Bad square setting given", i, 22);
+		ft_prt_err(as, "Bad square setting given", i, 0);
 	if (i == 1017)
-		ft_prt_err(as, "Bad cylinder setting given", i, 22);
+		ft_prt_err(as, "Bad cylinder setting given", i, 0);
 	if (i == 1018)
-		ft_prt_err(as, "Bad triangle setting given", i, 22);
+		ft_prt_err(as, "Bad triangle setting given", i, 0);
 	if (i == 1019)
-		ft_prt_err(as, "No camera", i, 22);
+		ft_prt_err(as, "No camera", i, 0);
 	ft_errors2(as, i, s);
 }
 
 void	ft_errors2(t_scene *as, int i, char *s)
 {
 	if (i == 1020)
-		ft_prt_err(as, "Zero vector detected", i, 22);
+		ft_prt_err(as, "Zero vector detected", i, 0);
 	if (i == 1021)
 		ft_prt_err(as, "Vector coordinates out of [-1, 1] range", i, 33);
 	if (i == 1022)
@@ -87,8 +87,8 @@ void	ft_errors2(t_scene *as, int i, char *s)
 	if (i == 1024)
 		ft_prt_err(as, s, i, 22);
 	if (i == 1025)
-		ft_prt_err(as, "Too many arguments\n./miniRT <file.rt> [-save]", i, 0);
+		ft_prt_err(as, "Too many arguments\n./miniRT <file.rt> [-save]", i, 22);
 	if (i == 1026)
-		ft_prt_err(as, "Invalid filetype\n./miniRT <file.rt> [-save]", i, 0);
+		ft_prt_err(as, "Invalid filetype\n./miniRT <file.rt> [-save]", i, 22);
 	(void)s;
 }

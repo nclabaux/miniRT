@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/10 17:02:28 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 18:16:52 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:48:38 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct	s_resolution
 
 typedef struct	s_amb_light
 {
-	double		intensity;
+	double		i;
 	t_color		color;
 }				t_amb_light;
 
@@ -154,7 +154,7 @@ typedef struct	s_img_link
 
 typedef struct	s_filter
 {
-	int		type;
+	int			type;
 	t_color		color;
 }				t_filter;
 
@@ -265,7 +265,7 @@ void			ft_errors3(t_scene *as, int i, char *s);
 **	file_reading0.c
 */
 void			ft_read_file(char *file, t_scene *as);
-void			ft_translate_line(char **line, t_scene *as);
+int				ft_translate_line(char **line, t_scene *as);
 int				ft_read_color(t_scene *as, char *s, t_color *color_storage);
 int				ft_read_double(t_scene *as, char *s, double *coor);
 int				ft_read_td(t_scene *as, char*s, t_td *point);
@@ -293,14 +293,15 @@ void			ft_tr_rd(char **line, t_scene *as);
 */
 void			ft_cy_rd(char **line, t_scene *as);
 void			ft_cy_rd2(char **s, t_scene *as, t_obj_link *new_ol, int i);
-void			ft_cu_rd(char **s, t_scene *as);
 void			ft_filter_rd(char **s, t_scene *as);
+void			ft_mono_filter(char **s, t_scene *as, int i);
 void			ft_skybox_rd(char **s, t_scene *as);
 
 /*
 **	filter.c
 */
 t_color			ft_filter_colors(t_color c, t_filter f);
+
 /*
 **	images.c
 */
@@ -333,6 +334,7 @@ double			ft_get_roots(t_ray ray, t_cylinder cy);
 t_color			ft_get_light(t_intersec i, t_scene scene);
 t_color			ft_get_light2(t_light *light, t_intersec i,
 					double lambert);
+t_color			ft_sky(t_scene scene);
 
 /*
 **	list_handling.c
@@ -374,11 +376,6 @@ void			ft_set_tr_data(t_triangle *tr);
 void			ft_set_sq_data(t_square *sq, t_scene *as);
 void			ft_create_4tr_sq(t_square *sq, t_scene *as);
 void			ft_alloc_tr(t_triangle tr, t_scene *as);
-
-/*
-**	set_data_1.c
-*/
-void			ft_set_cu(t_scene *as, t_cube cu);
 
 /*
 **	utils.c

@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 16:12:54 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/04 13:58:46 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:21:15 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,13 @@ void	ft_al_rd(char **s, t_scene *as)
 {
 	int	i;
 
-	if (as->al.intensity || as->al.color.r
-			|| as->al.color.g || as->al.color.b)
+	if (as->al.i || as->al.color.r || as->al.color.g || as->al.color.b)
 		ft_errors(as, 1004, "");
 	i = 1;
 	while (ft_isspace((*s)[i]))
 		i++;
 	if (ft_isdigit((*s)[i]))
-		ft_read_double(as, *s + i, &(as->al.intensity));
+		ft_read_double(as, *s + i, &(as->al.i));
 	else
 		ft_errors(as, 1007, NULL);
 	while (ft_isdigit((*s)[i]) || (*s)[i] == '.')

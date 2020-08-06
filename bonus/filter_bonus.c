@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 15:37:03 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 16:38:50 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:02:09 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_color	ft_filter_colors(t_color c, t_filter f)
 {
 	double	average;
-	
+
 	if (f.type == 0)
 		return (ft_multiply_colors(c, f.color));
 	average = c.r + c.g + c.b;

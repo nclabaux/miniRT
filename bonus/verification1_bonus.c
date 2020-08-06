@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 17:44:36 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/04 13:59:21 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:14:00 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	ft_object_verif(t_scene *as)
 		ft_printf("\033[01;33mNo object in scene, generated image");
 		if (as->cam_nbr > 1)
 			ft_printf("s");
-		ft_printf(" will be completely black.\n");
+		ft_printf(" might be completely black.\n");
 	}
 	while (ol)
 	{

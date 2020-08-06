@@ -6,7 +6,7 @@
 #    By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/05 18:28:50 by nclabaux          #+#    #+#              #
-#    Updated: 2020/08/05 16:09:44 by nclabaux         ###   ########.fr        #
+#    Updated: 2020/08/06 14:52:18 by nclabaux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,8 +56,7 @@ SRCS_BONUS =	bonus/bmp_bonus.c\
 	bonus/loop_bonus.c\
 	bonus/main_bonus.c\
 	bonus/ray_bonus.c\
-	bonus/set_data0_bonus.c\
-	bonus/set_data1_bonus.c\
+	bonus/set_data_bonus.c\
 	bonus/utils_bonus.c\
 	bonus/vectorial_calculus0_bonus.c\
 	bonus/vectorial_calculus1_bonus.c\

@@ -6,7 +6,7 @@
 /*   By: nclabaux <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 19:04:29 by nclabaux          #+#    #+#             */
-/*   Updated: 2020/08/05 18:08:42 by nclabaux         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:40:35 by nclabaux         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ void	ft_read_file(char *file, t_scene *as)
 			free(line);
 			ft_errors(as, 1002, NULL);
 		}
-		ft_translate_line(&line, as);
+		if (!ft_translate_line(&line, as))
+			ft_errors(as, 1005, line);
 	}
 	close(fd);
 	free(line);
 }
 
-void	ft_translate_line(char **line, t_scene *as)
+int		ft_translate_line(char **line, t_scene *as)
 {
 	if ((*line)[0] == 'R')
 		ft_res_rd(line, as);
@@ -60,17 +61,13 @@ void	ft_translate_line(char **line, t_scene *as)
 		ft_cy_rd(line, as);
 	else if ((*line)[0] == 't' && (*line)[1] == 'r')
 		ft_tr_rd(line, as);
-	else if ((*line)[0] == 'c' && (*line)[1] == 'u')
-		ft_cu_rd(line, as);
 	else if ((*line)[0] == 'F')
 		ft_filter_rd(line, as);
 	else if ((*line)[0] == 'S')
 		ft_skybox_rd(line, as);
 	else if ((*line)[0] != 0)
-	{
-		ft_errors(as, 1005, *line);
-		free(line);
-	}
+		return (0);
+	return (1);
 }
 
 int		ft_read_color(t_scene *as, char *s, t_color *color_storage)
